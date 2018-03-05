@@ -1,0 +1,6 @@
+import java.*;
+public class importTest{
+    public static void main(String args[]){
+    }
+}
+
