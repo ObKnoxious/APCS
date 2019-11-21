@@ -9,14 +9,16 @@ var gameBoard = [['a','b','c'],['d','e','f'],['g','h','i']];
 function handleClick(e){
     var y =getRowForClick(e.getY());
     var x =getColForClick(e.getX());
-    if(turn %2==0){
-        drawX(x,y);
-        gameBoard[y][x]='x';
-        turn+=1;
-    } else if(turn%2==1){
-        drawO(x,y);
-        gameBoard[y][x]='o';
-        turn+=1;
+    if(gameBoard[y][x] == 'x' || gameBoard[y][x] =='o'){}else{
+        if(turn %2==0){
+            drawX(x,y);
+            gameBoard[y][x]='x';
+            turn+=1;
+        } else if(turn%2==1){
+            drawO(x,y);
+            gameBoard[y][x]='o';
+            turn+=1;
+        }
     }
     if(winnerInRow(gameBoard[0])){
         var line = new Line(0,50,500,50);
